@@ -1,8 +1,6 @@
 import TabButtons from "./TabButtons";
-import featuresImage from "../assets/MainSection/features-image.svg";
-import featuresImage1 from "../assets/MainSection/feature-image-1.svg";
-import featuresImage2 from "../assets/MainSection/feature-image-2.svg";
-import featuresImage3 from "../assets/MainSection/feature-image-3.svg";
+import FeatureCard from "./FeatureCard";
+import { featureCards } from "../constants/constants";
 
 const MainSection = () => {
   return (
@@ -25,28 +23,15 @@ const MainSection = () => {
 
         <TabButtons />
 
-        <img
-          src={featuresImage}
-          alt="Features Image"
-          className="hidden sm:block mx-auto w-full sm:w-auto mt-10"
-        />
-
-        <div className="block sm:hidden mt-10 space-y-6">
-          <img
-            src={featuresImage1}
-            alt="Feature Image 1"
-            className="mx-auto w-full"
-          />
-          <img
-            src={featuresImage2}
-            alt="Feature Image 2"
-            className="mx-auto w-full"
-          />
-          <img
-            src={featuresImage3}
-            alt="Feature Image 3"
-            className="mx-auto w-full"
-          />
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featureCards.map((card, index) => (
+            <FeatureCard
+              key={index}
+              title={card.title}
+              description={card.description}
+              featureImage={card.featureImage}
+            />
+          ))}
         </div>
       </div>
     </section>
