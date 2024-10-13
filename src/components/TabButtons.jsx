@@ -1,19 +1,19 @@
 import { useState } from "react";
-import winnersLosersIcon from "../assets/winners-losers-icon.svg";
-import leaderboardsIcon from "../assets/leaderboards-icon.svg";
-import newEntrantsIcon from "../assets/new-entrants-icon.svg";
-import uniqueMetricsIcon from "../assets/unique-metrics-icon.svg";
-import portfoliosIcon from "../assets/portfolios-icon.svg";
-import winnersLosersSelectedIcon from "../assets/winners-losers-selected-icon.svg";
-import leaderboardsSelectedIcon from "../assets/leaderboards-selected-icon.svg";
-import newEntrantsSelectedIcon from "../assets/new-entrants-selected-icon.svg";
-import uniqueMetricsSelectedIcon from "../assets/unique-metrics-selected-icon.svg";
-import portfoliosSelectedIcon from "../assets/portfolios-selected-icon.svg";
-import winnersLosersImage from "../assets/winners-losers-img.svg";
-import leaderboardsImage from "../assets/leaderboards-img.svg";
-import newEntrantsImage from "../assets/new-entrants-img.svg";
-import uniqueMetricsImage from "../assets/unique-metrics-img.svg";
-import portfoliosImage from "../assets/portfolios-img.svg";
+import winnersLosersIcon from "../assets/Tabs/winners-losers-icon.svg";
+import leaderboardsIcon from "../assets/Tabs/leaderboards-icon.svg";
+import newEntrantsIcon from "../assets/Tabs/new-entrants-icon.svg";
+import uniqueMetricsIcon from "../assets/Tabs/unique-metrics-icon.svg";
+import portfoliosIcon from "../assets/Tabs/portfolios-icon.svg";
+import winnersLosersSelectedIcon from "../assets/Tabs/winners-losers-selected-icon.svg";
+import leaderboardsSelectedIcon from "../assets/Tabs/leaderboards-selected-icon.svg";
+import newEntrantsSelectedIcon from "../assets/Tabs/new-entrants-selected-icon.svg";
+import uniqueMetricsSelectedIcon from "../assets/Tabs/unique-metrics-selected-icon.svg";
+import portfoliosSelectedIcon from "../assets/Tabs/portfolios-selected-icon.svg";
+import winnersLosersImage from "../assets/Tabs/winners-losers-img.svg";
+import leaderboardsImage from "../assets/Tabs/leaderboards-img.svg";
+import newEntrantsImage from "../assets/Tabs/new-entrants-img.svg";
+import uniqueMetricsImage from "../assets/Tabs/unique-metrics-img.svg";
+import portfoliosImage from "../assets/Tabs/portfolios-img.svg";
 
 const tabs = [
   {

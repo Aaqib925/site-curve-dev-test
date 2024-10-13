@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import arrowUp from "../assets/arrow-up.svg";
-import arrowDown from "../assets/arrow-down.svg";
-import infoIcon from "../assets/info.svg";
+import arrowUp from "../assets/StatsCard/arrow-up.svg";
+import arrowDown from "../assets/StatsCard/arrow-down.svg";
+import infoIcon from "../assets/StatsCard/info.svg";
 
 const StatsCard = ({ text, count, percent, arrowImage }) => {
   return (
-    <div className="bg-[#373458] text-white px-4 py-1 rounded-[5px] flex flex-col justify-between items-start font-worksans text-md font-normal tracking-wider">
+    <div className="bg-[#373458] text-white px-4 py-1 rounded-[5px] flex flex-col justify-between items-start font-worksans text-md font-normal tracking-wider shadow-xl">
       <div className="flex items-center space-x-2">
         <p>{text}</p>
         <img src={infoIcon} alt="Info" className="pr-4" />

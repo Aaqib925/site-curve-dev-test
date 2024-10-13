@@ -1,4 +1,4 @@
-const statsData = [
+export const statsData = [
     { text: "citi.com", count: "4.2M", percent: "52", arrowImage: "success" },
     { text: "amazon.com", count: "2.1M", percent: "34", arrowImage: "error" },
     { text: "netflix.com", count: "1.5M", percent: "25", arrowImage: "success" },
@@ -16,5 +16,3 @@ const statsData = [
     { text: "uber.com", count: "2.2M", percent: "35", arrowImage: "error" },
     { text: "airbnb.com", count: "4.0M", percent: "53", arrowImage: "success" },
 ];
-
-export default statsData;

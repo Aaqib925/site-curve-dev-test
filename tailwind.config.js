@@ -21,7 +21,7 @@ export default {
         worksans: ['Work Sans', 'sans-serif'],
       },
       boxShadow: {
-        'custom': '-10px 0 10px -5px rgba(0, 0, 0, 0.7), 10px 0 10px -5px rgba(0, 0, 0, 0.7)',
+        'inner-custom': 'inset 0 -8px 20px 0 rgba(0, 0, 0, 0.5)',
       },
     },
   },

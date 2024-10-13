@@ -1,8 +1,8 @@
 import TabButtons from "./TabButtons";
-import featuresImage from "../assets/features-image.svg";
-import featuresImage1 from "../assets/feature-image-1.svg";
-import featuresImage2 from "../assets/feature-image-2.svg";
-import featuresImage3 from "../assets/feature-image-3.svg";
+import featuresImage from "../assets/MainSection/features-image.svg";
+import featuresImage1 from "../assets/MainSection/feature-image-1.svg";
+import featuresImage2 from "../assets/MainSection/feature-image-2.svg";
+import featuresImage3 from "../assets/MainSection/feature-image-3.svg";
 
 const MainSection = () => {
   return (

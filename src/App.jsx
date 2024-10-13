@@ -10,18 +10,6 @@ function App() {
       <HeroSection />
       <MainSection />
     </>
-
-    // <div className="flex justify-center items-center h-screen ">
-    // <Button
-    //   buttonText="Create Landscape"
-    //   styles="font-inter text-white font-medium bg-primary border-primary border-[2.5px]"
-    // />
-
-    // <Button
-    //   buttonText="Discover Landscapes"
-    //   styles="font-inter text-white font-medium bg-deepblue border-red-700 border-[2.5px]"
-    // />
-    // </div>
   );
 }
 

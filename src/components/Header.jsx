@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Logo from "../assets/logo.png";
-import dropDown from "../assets/drop-down.svg";
+import dropDown from "../assets/Menu/drop-down.svg";
+import crossIcon from "../assets/Menu/cross-icon.svg";
+import menuIcon from "../assets/Menu/menu-icon.svg";
 import Button from "./Button";
-import StatsCard from "./StatsCard";
-import statsData from "../constants/statsData";
+import StatsCardCarousel from "./StatsCardCarousel";
+import Menu from "./Menu";
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -18,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-[#040033] py-4 relative shadow-custom z-10">
+    <nav className="bg-[#040033] py-4 relative z-10 ">
       <div className="container mx-auto flex justify-between items-center px-4">
         <a href="/">
           <img src={Logo} width={190} height={40} alt="Site Curve" />
@@ -113,170 +115,30 @@ const Header = () => {
         <div className="hidden lg:flex space-x-4 ml-6">
           <Button
             buttonText="Create Landscape"
-            styles="bg-primary text-white font-normal border-2 border-[#473eee]"
+            styles="bg-primary text-white font-normal border-2 border-[#473eee] shadow-xl"
           />
 
           <Button
             buttonText="Discover Landscapes"
-            styles="text-white font-normal bg-transparent border-white border-2"
+            styles="text-white font-normal bg-transparent border-white border-2 shadow-xl"
           />
         </div>
 
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu}>
             {menuOpen ? (
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
+              <img src={crossIcon} alt="Cross Icon" />
             ) : (
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
+              <img src={menuIcon} alt="Menu Icon" />
             )}
           </button>
         </div>
       </div>
 
-      <div className="mt-6 stats-wrapper w-screen z-0">
-        <div className="flex animate-slide">
-          <div className="flex space-x-1">
-            {statsData.map((stat, index) => (
-              <StatsCard
-                key={index}
-                text={stat.text}
-                count={stat.count}
-                percent={stat.percent}
-                arrowImage={stat.arrowImage}
-              />
-            ))}
-          </div>
-          <div className="flex space-x-1 ml-1">
-            {statsData.map((stat, index) => (
-              <StatsCard
-                key={`duplicate-${index}`}
-                text={stat.text}
-                count={stat.count}
-                percent={stat.percent}
-                arrowImage={stat.arrowImage}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <StatsCardCarousel />
 
       {menuOpen && (
-        <div className="bg-[#040033] text-white p-4 mt-4 absolute left-0 right-0">
-          <div className="flex flex-col space-y-2">
-            {/* Features Dropdown */}
-            <div className="relative">
-              <button
-                className="flex justify-between items-center w-full text-left"
-                onClick={() => toggleDropdown("features")}
-              >
-                Features
-                <img src={dropDown} alt="Drop Down" className="ml-2" />
-              </button>
-              {openDropdown === "features" && (
-                <div className="bg-transparent text-white p-2 rounded shadow-lg">
-                  <a
-                    href="/"
-                    className="block px-4 py-2 hover:bg-gray-200 hover:text-[#4B42F4] transition-colors"
-                  >
-                    Feature 1
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="border-b border-gray-600 my-2" />
-            <a href="/pricing" className="hover:text-gray-200">
-              Pricing
-            </a>
-            <div className="border-b border-gray-600 my-2" />
-            {/* Company Dropdown */}
-            <div className="relative">
-              <button
-                className="flex justify-between items-center w-full text-left"
-                onClick={() => toggleDropdown("company")}
-              >
-                Company
-                <img src={dropDown} alt="Drop Down" className="ml-2" />
-              </button>
-              {openDropdown === "company" && (
-                <div className="bg-transparent text-white p-2 rounded shadow-lg">
-                  <a
-                    href="/about"
-                    className="block px-4 py-2 hover:bg-gray-200 hover:text-[#4B42F4] transition-colors"
-                  >
-                    About Us
-                  </a>
-                  <a
-                    href="/careers"
-                    className="block px-4 py-2 hover:bg-gray-200 hover:text-[#4B42F4] transition-colors"
-                  >
-                    Careers
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="border-b border-gray-600 my-2" />
-            {/* Resources Dropdown */}
-            <div className="relative">
-              <button
-                className="flex justify-between items-center w-full text-left"
-                onClick={() => toggleDropdown("resources")}
-              >
-                Resources
-                <img src={dropDown} alt="Drop Down" className="ml-2" />
-              </button>
-              {openDropdown === "resources" && (
-                <div className="bg-transparent text-white p-2 rounded shadow-lg">
-                  <a
-                    href="/blog"
-                    className="block px-4 py-2 hover:bg-gray-200 hover:text-[#4B42F4] transition-colors"
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="/support"
-                    className="block px-4 py-2 hover:bg-gray-200 hover:text-[#4B42F4] transition-colors"
-                  >
-                    Support
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="border-b border-gray-600 my-2" />
-            <a href="/enterprise" className="hover:text-gray-200">
-              Enterprise
-            </a>
-            <div className="border-b border-gray-600 my-2" />
-            <a href="/login" className="hover:text-gray-200">
-              Login
-            </a>
-          </div>
-        </div>
+        <Menu openDropdown={openDropdown} toggleDropdown={toggleDropdown} />
       )}
     </nav>
   );
