@@ -7,15 +7,14 @@ import Button from "./Button";
 
 const HeroSection = () => {
   return (
-    <section
-      className="bg-[#F8F8FF] py-16"
-      style={{
-        backgroundImage: `url(${heroSectionBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="container mx-auto text-center px-4 sm:px-0">
+    <section className="bg-[#F8F8FF] py-16 relative overflow-hidden">
+      <img
+        src={heroSectionBg}
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+
+      <div className="container mx-auto text-center px-4 sm:px-0 relative z-10">
         <h1 className="text-body-text font-inter font-extrabold text-[40px] sm:text-[65px] leading-[1.1] mb-6 max-w-2xl sm:max-w-4xl mx-auto">
           Discover Who&apos;s Winning and Losing in SEO and Why
         </h1>
