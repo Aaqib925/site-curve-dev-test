@@ -15,7 +15,7 @@ const HeroSection = () => {
       />
 
       <div className="container mx-auto text-center px-4 sm:px-0 relative z-10">
-        <h1 className="text-body-text font-inter font-extrabold text-[40px] sm:text-[65px] leading-[1.1] mb-6 max-w-2xl sm:max-w-4xl mx-auto">
+        <h1 className="text-body-text font-inter font-extrabold text-[40px] sm:text-[60px] leading-[1.1] mb-6 max-w-2xl sm:max-w-4xl mx-auto">
           Discover Who&apos;s Winning and Losing in SEO and Why
         </h1>
 
@@ -34,7 +34,7 @@ const HeroSection = () => {
           />
         </div>
 
-        <p className="text-[#5F6575] font-inter font-normal mb-10 flex justify-center items-center tracking-wider">
+        <p className="text-[#5F6575] font-inter font-normal text-[14px] mb-10 flex justify-center items-center tracking-wider">
           <img src={cardIcon} alt="Card Icon" className="mr-2" /> No Credit Card
           Required
         </p>

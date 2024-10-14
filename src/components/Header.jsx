@@ -24,6 +24,12 @@ const Header = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const handleBackdropClick = (e) => {
+    if (e.target.classList.contains("backdrop")) {
+      closeDropdown();
+    }
+  };
+
   return (
     <nav className="bg-[#040033] py-4 sticky top-0 z-50 shadow-xl">
       <div className="container mx-auto flex justify-between items-center px-4">
@@ -158,6 +164,13 @@ const Header = () => {
           openDropdown={openDropdown}
           toggleDropdown={toggleDropdown}
           toggleMenu={toggleMenu}
+        />
+      )}
+
+      {openDropdown && (
+        <div
+          className="fixed inset-0 backdrop"
+          onClick={handleBackdropClick}
         />
       )}
     </nav>

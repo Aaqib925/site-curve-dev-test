@@ -1,10 +1,8 @@
 import TabButtons from "./TabButtons";
 import FeatureCard from "./FeatureCard";
-import featuresImage1 from "../assets/MainSection/feature-image-1.svg";
-import featuresImage2 from "../assets/MainSection/feature-image-2.svg";
-import featuresImage3 from "../assets/MainSection/feature-image-3.svg";
 import arrow1 from "../assets/MainSection/arrow1.svg";
 import arrow2 from "../assets/MainSection/arrow2.svg";
+import { featureData } from "../constants/constants";
 
 const MainSection = () => {
   return (
@@ -28,22 +26,14 @@ const MainSection = () => {
         <TabButtons />
 
         <div className=" mt-6 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-24 relative">
-          <FeatureCard
-            title="Add keywords or websites"
-            description="Get started by importing your keywords or websites alongside your preferred device, language, and location."
-            featureImage={featuresImage1}
-          />
-          <FeatureCard
-            title="Build landscape"
-            description="SiteCurve uses AI to categorize all keywords and websites in the search results to build your custom SEO landscape."
-            featureImage={featuresImage2}
-          />
-          <FeatureCard
-            title="Uncover insights"
-            description="SiteCurve pulls fresh rank data, giving you an automated, up-to-date view of winning and losing websites each day."
-            featureImage={featuresImage3}
-          />
-
+          {featureData.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              title={feature.title}
+              description={feature.description}
+              featureImage={feature.featureImage}
+            />
+          ))}
           <img
             src={arrow1}
             alt="Arrow 1"
