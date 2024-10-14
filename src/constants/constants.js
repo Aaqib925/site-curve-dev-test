@@ -13,9 +13,7 @@ import leaderboardsImage from "../assets/Tabs/leaderboards-img.png";
 import newEntrantsImage from "../assets/Tabs/new-entrants-img.png";
 import uniqueMetricsImage from "../assets/Tabs/unique-metrics-img.png";
 import portfoliosImage from "../assets/Tabs/portfolios-img.png";
-import featuresImage1 from "../assets/MainSection/feature-image-1.svg";
-import featuresImage2 from "../assets/MainSection/feature-image-2.svg";
-import featuresImage3 from "../assets/MainSection/feature-image-3.svg";
+
 
 export const tabs = [
     {
@@ -81,28 +79,6 @@ export const tabs = [
         ],
     },
 ];
-
-export const featureCards = [
-    {
-        title: "Add keywords or websites",
-        description:
-            "Get started by importing your keywords or websites alongside your preferred device, language, and location.",
-        featureImage: featuresImage1,
-    },
-    {
-        title: "Build landscape",
-        description:
-            "SiteCurve uses AI to categorize all keywords and websites in the search results to build your custom SEO landscape.",
-        featureImage: featuresImage2,
-    },
-    {
-        title: "Uncover insights",
-        description:
-            "SiteCurve pulls fresh rank data, giving you an automated, up-to-date view of winning and losing websites each day.",
-        featureImage: featuresImage3,
-    },
-];
-
 
 export const statsData = [
     { text: "citi.com", count: "4.2M", percent: "52", arrowImage: "success" },

@@ -20,14 +20,13 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-[#040033] py-4 relative z-10 ">
+    <nav className="bg-[#040033] py-4 sticky top-0 z-50 shadow-xl">
       <div className="container mx-auto flex justify-between items-center px-4">
         <a href="/">
           <img src={Logo} width={190} height={40} alt="Site Curve" />
         </a>
 
         <div className="hidden md:flex justify-center items-center space-x-6 tracking-wider text-secondary font-inter ml-6 relative z-20">
-          {/* Features Dropdown */}
           <div className="relative">
             <button
               className="flex items-center focus:outline-none hover:text-white transition-colors"

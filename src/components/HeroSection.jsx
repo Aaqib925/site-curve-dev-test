@@ -2,7 +2,7 @@ import cardIcon from "../assets/HeroSection/card-icon.svg";
 import searchIcon from "../assets/HeroSection/search-icon.svg";
 import heroSectionImageWithArrows from "../assets/HeroSection/hero-section-image1.svg";
 import heroSectionImageWithoutArrows from "../assets/HeroSection/hero-section-image2.svg";
-import heroSectionBg from "../assets/HeroSection/hero-section-bg.svg";
+import heroSectionBg from "../assets/HeroSection/hero-section-bg-img.svg";
 import Button from "./Button";
 
 const HeroSection = () => {
