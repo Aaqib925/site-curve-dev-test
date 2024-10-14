@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import dropDown from "../assets/Menu/drop-down.svg";
 import dropUp from "../assets/Menu/drop-up.svg";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
-const Menu = ({ openDropdown, toggleDropdown }) => {
+const Menu = ({ openDropdown, toggleDropdown, toggleMenu }) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -18,19 +19,27 @@ const Menu = ({ openDropdown, toggleDropdown }) => {
       <div className="flex flex-col">
         <DropdownMenu
           label="Features"
+          toggleMenu={toggleMenu}
           isOpen={openDropdown === "features"}
           toggle={() => toggleDropdown("features")}
-          items={[{ href: "/", label: "Feature 1" }]}
+          items={[
+            { href: "/feature1", label: "Feature 1" },
+            { href: "/feature2", label: "Feature 2" },
+          ]}
         />
-        <a
-          href="/pricing"
+        <Link
+          to="/pricing"
+          onClick={() => {
+            toggleMenu();
+          }}
           className="hover:text-gray-200 border-b border-[#373458] px-6 py-5"
         >
           Pricing
-        </a>
+        </Link>
         <DropdownMenu
           label="Company"
           isOpen={openDropdown === "company"}
+          toggleMenu={toggleMenu}
           toggle={() => toggleDropdown("company")}
           items={[
             { href: "/about", label: "About Us" },
@@ -40,24 +49,31 @@ const Menu = ({ openDropdown, toggleDropdown }) => {
         <DropdownMenu
           label="Resources"
           isOpen={openDropdown === "resources"}
+          toggleMenu={toggleMenu}
           toggle={() => toggleDropdown("resources")}
           items={[
             { href: "/blog", label: "Blog" },
             { href: "/support", label: "Support" },
           ]}
         />
-        <a
-          href="/enterprise"
+        <Link
+          to="/enterprise"
+          onClick={() => {
+            toggleMenu();
+          }}
           className="hover:text-gray-200 border-b border-[#373458] px-6 py-5"
         >
           Enterprise
-        </a>
-        <a
-          href="/login"
+        </Link>
+        <Link
+          to="/login"
+          onClick={() => {
+            toggleMenu();
+          }}
           className="hover:text-gray-200 border-b border-[#373458] px-6 py-5"
         >
           Login
-        </a>
+        </Link>
       </div>
       <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 mx-6 mt-6">
         <Button
@@ -73,7 +89,7 @@ const Menu = ({ openDropdown, toggleDropdown }) => {
   );
 };
 
-const DropdownMenu = ({ label, isOpen, toggle, items }) => (
+const DropdownMenu = ({ label, isOpen, toggle, items, toggleMenu }) => (
   <div className="relative">
     <button
       className={`flex justify-between items-center px-6 w-full text-left py-5 ${
@@ -91,13 +107,17 @@ const DropdownMenu = ({ label, isOpen, toggle, items }) => (
     {isOpen && (
       <div className="bg-transparent text-white p-2 rounded">
         {items.map((item, idx) => (
-          <a
+          <Link
             key={idx}
-            href={item.href}
+            to={item.href}
+            onClick={() => {
+              toggle();
+              toggleMenu();
+            }}
             className="block px-10 py-2 text-[18px] transition-colors"
           >
             {item.label}
-          </a>
+          </Link>
         ))}
       </div>
     )}

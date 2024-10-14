@@ -4,7 +4,7 @@ import { statsData } from "../constants/constants";
 const StatsCardCarousel = () => {
   return (
     <div className="mt-6 stats-wrapper w-screen z-0">
-      <div className="flex animate-slide">
+      <div className="flex animate-slide hover:pause-animation">
         {[...Array(2)].map((_, i) => (
           <div key={i} className="flex space-x-1 ml-1">
             {statsData.map((stat, index) => (

@@ -28,3 +28,9 @@
   white-space: nowrap;
   position: relative;
 }
+
+@layer utilities {
+  .pause-animation {
+    animation-play-state: paused;
+  }
+}
